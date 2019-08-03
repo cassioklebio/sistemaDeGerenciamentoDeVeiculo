@@ -2,14 +2,16 @@
 Sistema de Gerenciamento de Veículo - Frontend - Angular7 e Backend Spring Boot
 para o treinamento.
 
-#Crud
-##Cadastro de Veículo, Proprietario, Multa;
+# Crud
+
+## Cadastro de Veículo, Proprietario, Multa;
 
 
 
-#Regras de Négocio
-##
-DETRAN
+# Regras de Négocio
+
+
+## DETRAN
 	- O sistema deve aplicar o valor e data da multa ao receber os dados da placa 	do veiculo e o tipo da multa;
 
 	Gravíssima	R$ 293,47
@@ -24,5 +26,5 @@ DETRAN
 
 	- O sistema deve gerar a placa do veículo cadastrado;
 
-#Desevolvido por: Cássio Klebio Pereira Lins
-#Estudante do 7° ano do Curso de sistema de Informação
+### Desevolvido por: Cássio Klebio Pereira Lins
+### Estudante do 7° ano do Curso de sistema de Informação

@@ -1,0 +1,176 @@
+<div class="container">
+    <form [formGroup]="completeForm" novalidate (ngSubmit)="submit()">
+    <hr>
+    <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dados do Veículo
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+         <!-- Formulario dados do veículo-->
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="Chassi" formControlName="veiculoChassi">
+                      <mat-error  *ngIf="hasError('veiculoChassi')">
+                        Chassi <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Renavam" formControlName="veiculoRenavam">
+                        <mat-error>
+                          Renavam <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Marca" formControlName="veiculoMarca">
+                        <mat-error>
+                          Marca <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <mat-form-field class="full-width">
+                          <input matInput placeholder="Modelo" formControlName="veiculoModelo">
+                          <mat-error>
+                            Modelo <strong>required</strong>
+                          </mat-error>
+                        </mat-form-field>
+                        
+                  </div>
+                  <div class="col">
+                      <mat-form-field class="full-width">
+                          <input matInput placeholder="Ano" formControlName="veiculoAno">
+                          <mat-error>
+                            Ano <strong>required</strong>
+                          </mat-error>
+                        </mat-form-field>
+                  </div>
+                </div>
+       <!-- Formulario dados do veículo-->
+        </mat-expansion-panel>
+      </mat-accordion>
+      
+     <hr>
+    <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dados do Proprietário
+              <hr>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+         <!-- Formulario dados do Proprietario-->
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="Nome" formControlName="proprietarioNome">
+                      <mat-error>
+                        Nome <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    
+              </div>
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="CPF ou Cnpj" formControlName="proprietarioCpfOuCnpj">
+                      <mat-error>
+                          CPF ou Cnpj <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="RG" formControlName="proprietarioRG">
+                        <mat-error>
+                          RG <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="CNH" formControlName="proprietarioCNH">
+                        <mat-error>
+                            CNH <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      
+                </div>
+              </div>
+  
+        <br>
+        <hr>
+        <p>Endereço</p>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Rua" formControlName="proprietarioEnderecoRua">
+                    <mat-error>
+                      Rua <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                  
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Numero" formControlName="proprietarioEnderecoNumero">
+                    <mat-error>
+                        Número <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                  
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="Bairro" formControlName="proprietarioEnderecoBairro">
+                      <mat-error>
+                        Bairro <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    
+              </div>
+              <div class="col">
+                  <mat-form-field class="full-width">
+                      <input matInput placeholder="Complemento" formControlName="proprietarioEnderecoComplemento">
+                      <mat-error>
+                          Complemento <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Cep" formControlName="proprietarioEnderecoCep">
+                        <mat-error>
+                            Cep <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    
+              </div>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br> 
+      <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Cadastro</button>
+        </mat-card-actions>
+    </form> 
+    <hr>
+  <app-vehicle-list></app-vehicle-list>  
+  </div>
+  

@@ -1,0 +1,60 @@
+<div class="container">
+    <form [formGroup]="veiculoForm" novalidate (ngSubmit)="submit()">
+      <mat-card class="shipping-card">
+        <mat-card-header>
+          <mat-card-title>Cadastro de veículo</mat-card-title>
+        </mat-card-header >
+        <mat-card-content>
+                
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Chassi" formControlName="veiculoChassi">
+                <mat-error *ngIf="hasError('veiculoChassi')">Número do Chassi do veículo <strong>required</strong></mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Renavam" formControlName="veiculoRenavam">
+                <mat-error *ngIf="hasError('veiculoRenavam')">Renavam do veículo <strong>required</strong></mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Marca" formControlName="veiculoMarca">
+                    <mat-error *ngIf="hasError('veiculoMarca')">Marca do veículo<strong>required</strong></mat-error> 
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Modelo" formControlName="veiculoModelo">
+                    <mat-error *ngIf="hasError('veiculoModelo')">Nome do veículo<strong>required</strong></mat-error>
+                  </mat-form-field>
+                </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ano" formControlName="veiculoAno">
+                <mat-error *ngIf="hasError('veiculoAno')">Ano de fabricação do veículo<strong>required</strong></mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="CPF" formControlName="proprietarioCpfOuCnpj">
+                  <mat-error *ngIf="hasError('proprietarioCpfOuCnpj')">Ano de fabricação do veículo<strong>required</strong></mat-error>
+                </mat-form-field>
+              </div>
+          </div>
+  
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Cadastro</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    <hr>
+   <app-vehicle-list></app-vehicle-list>
+  </div>

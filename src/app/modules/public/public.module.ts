@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { PublicRoutingModule } from './public-routing.module';
 import { AboutComponent } from './pages/about/about.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -17,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { PublicHomeComponent } from './pages/public-home/public-home.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -37,7 +37,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatMenuModule,
     MatIconModule,
     LayoutModule,
-    MatExpansionModule
+    MatExpansionModule,
+    
+    
   ],
   providers: [
 

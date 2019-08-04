@@ -9,13 +9,13 @@
           <div class="row">
             <div class="col">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Chassi" formControlName="veiculoChassi">
+                <input matInput placeholder="Chassi" formControlName="veiculoChassi" required>
                 <mat-error *ngIf="hasError('veiculoChassi')">Número do Chassi do veículo <strong>required</strong></mat-error>
               </mat-form-field>
             </div>
             <div class="col">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Renavam" formControlName="veiculoRenavam">
+                <input matInput placeholder="Renavam" formControlName="veiculoRenavam" required>
                 <mat-error *ngIf="hasError('veiculoRenavam')">Renavam do veículo <strong>required</strong></mat-error>
               </mat-form-field>
             </div>
@@ -23,13 +23,13 @@
           <div class="row">
               <div class="col">
                   <mat-form-field class="full-width">
-                    <input matInput placeholder="Marca" formControlName="veiculoMarca">
+                    <input matInput placeholder="Marca" formControlName="veiculoMarca" required>
                     <mat-error *ngIf="hasError('veiculoMarca')">Marca do veículo<strong>required</strong></mat-error> 
                   </mat-form-field>
                 </div>
                 <div class="col">
                   <mat-form-field class="full-width">
-                    <input matInput placeholder="Modelo" formControlName="veiculoModelo">
+                    <input matInput placeholder="Modelo" formControlName="veiculoModelo" required>
                     <mat-error *ngIf="hasError('veiculoModelo')">Nome do veículo<strong>required</strong></mat-error>
                   </mat-form-field>
                 </div>
@@ -37,13 +37,13 @@
           <div class="row">
             <div class="col">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Ano" formControlName="veiculoAno">
+                <input matInput placeholder="Ano" formControlName="veiculoAno" required>
                 <mat-error *ngIf="hasError('veiculoAno')">Ano de fabricação do veículo<strong>required</strong></mat-error>
               </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="full-width">
-                  <input matInput placeholder="CPF" formControlName="proprietarioCpfOuCnpj">
+                  <input matInput placeholder="CPF" formControlName="proprietarioCpfOuCnpj" required>
                   <mat-error *ngIf="hasError('proprietarioCpfOuCnpj')">Ano de fabricação do veículo<strong>required</strong></mat-error>
                 </mat-form-field>
               </div>

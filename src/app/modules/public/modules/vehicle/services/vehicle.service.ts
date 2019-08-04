@@ -5,9 +5,7 @@ import { Observable } from 'rxjs';
 import { Vehicle } from '../models/vehicle.interface';
 import { map, take } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class VehicleService {
 
   constructor(

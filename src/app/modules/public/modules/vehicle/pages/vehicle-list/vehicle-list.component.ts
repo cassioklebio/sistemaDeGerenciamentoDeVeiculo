@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../models/vehicle.interface';
 import { MatTableDataSource } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -21,7 +22,8 @@ export class VehicleListComponent implements OnInit {
 
 
   constructor(
-    private vehicleService: VehicleService
+    private vehicleService: VehicleService,
+    private httpclient: HttpClient
   ) {
     this.dataSource = new MatTableDataSource<Vehicle>();
     this.displayedColumnsVeiculo = ['modelo', 'chassi', 'renavam', 'placa', 'ano', 'delete', 'atualizar'];

@@ -1,23 +1,31 @@
 <div class="container">
-    <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-      <mat-card class="shipping-card">
-        <mat-card-header>
-          <mat-card-title>Consulta Multa </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="row">
-            <div class="col">
+  <form [formGroup]="searchTicket" novalidate (ngSubmit)="submit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Consulta Multa </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Consultar Multa" formControlName="consultaMulta">
-              </mat-form-field>
-            </div>
+                  <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                    <mat-autocomplete #autoGroup="matAutocomplete">
+                      <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                        <mat-option *ngFor="let name of group.names" [value]="name">
+                          {{name}}
+                        </mat-option>
+                    </mat-optgroup>
+                  </mat-autocomplete>
+                </mat-form-field>
           </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit">Pesquisar</button>
-        </mat-card-actions>
-      </mat-card>
-    </form>
-    <hr>
-      
-  </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">
+          Pesquisar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  <hr />
+</div>

@@ -6,8 +6,8 @@ import { TicketSearchComponent } from './pages/ticket-search/ticket-search.compo
 
 const routes: Routes = [
   { path: '', redirectTo: 'form', pathMatch: 'full' },
-  { path: 'form', component: TicketRegistrationComponent },
-  { path: 'search', component: TicketSearchComponent}
+  { path: 'form', component: TicketRegistrationComponent, data:{breadcrumbs: 'Cadastro Multa'} },
+  { path: 'search', component: TicketSearchComponent, data:{breadcrumbs: 'Consulta de Multa'}}
 ];
 
 @NgModule({

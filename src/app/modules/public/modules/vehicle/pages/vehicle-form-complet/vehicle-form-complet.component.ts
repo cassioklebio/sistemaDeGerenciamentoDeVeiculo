@@ -2,6 +2,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-vehicle-form-complet',
@@ -15,7 +16,8 @@ export class VehicleFormCompletComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private vehicleService: VehicleService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    
   ) { }
 
   ngOnInit() {
@@ -64,7 +66,10 @@ export class VehicleFormCompletComponent implements OnInit {
   }
 
 
+  loadByID(id) {
+    return null;
 
+  }
 
 
 

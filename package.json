@@ -2,12 +2,7 @@
   "name": "sistema-de-gerenciamento-de-veiculo",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "compodoc": "compodoc -p tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -21,17 +16,19 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@exalif/ngx-breadcrumbs": "^7.1.1",
     "angular-material": "^1.1.19",
     "bootstrap": "4.1.1",
+    "generate-docs": "compodoc -p src/tsconfig.app.json",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
+    "ng6-breadcrumbs": "^1.0.7",
     "ngx-bootstrap": "^5.1.0",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
+    "serve-docs": "compodoc -s src/tsconfig.app.json",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1",
-    "generate-docs": "compodoc -p src/tsconfig.app.json",
-    "serve-docs": "compodoc -s src/tsconfig.app.json"  
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.2",
@@ -54,9 +51,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
-  },
-  "scripts": {
-    "compodoc": "compodoc -p tsconfig.json"
   }
-
- }
+}

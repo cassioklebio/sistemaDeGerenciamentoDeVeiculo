@@ -6,10 +6,10 @@ import { VehicleHomeComponent } from './pages/vehicle-home/vehicle-home.componen
 
 
 const routes: Routes = [
-  {path: 'vehicle-home', component: VehicleHomeComponent},
-  {path: 'form-complete', component: VehicleFormCompletComponent},
-  {path: 'form-simple', component: VehicleFormSimpleComponent},
-  {path: 'form-complete/edit/:id', component: VehicleFormCompletComponent}
+  {path: 'vehicle-home', component: VehicleHomeComponent, data:{breadcrumbs: 'Veículo'}},
+  {path: 'form-complete', component: VehicleFormCompletComponent, data:{breadcrumbs: 'Cadastro de veículo primeira aquisição'}},
+  {path: 'form-simple', component: VehicleFormSimpleComponent, data: {breadcrumbs: 'Cadastro de veiculo'}},
+  {path: 'form-complete/edit/:id', component: VehicleFormCompletComponent, data: {breadcrumbs: 'vehicle.name'}}
 ];
 
 @NgModule({

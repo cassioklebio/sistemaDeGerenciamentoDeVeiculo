@@ -10,7 +10,13 @@ para o treinamento.
 
 ## Sistema de Veículo e multa 
 
-   - O sistema deve aplicar o valor e data da multa ao receber os dados da placa do veiculo e o tipo da multa;
+
+# Regras de Négocio
+
+
+## Sistema de Veículo e multa
+	    - O sistema deve aplicar o valor e data da multa ao receber 
+	os dados da placa 	do veiculo e o tipo da multa;
 
     Gravíssima	R$ 293,47
     Grave		R$ 195,23
@@ -24,5 +30,5 @@ para o treinamento.
 
     - O sistema deve gerar a placa do veículo cadastrado;
 
-## Desevolvido por: Cássio Klebio Pereira Lins
-## Estudante do 7° ano do Curso de sistema de Informação
+### Desevolvido por: Cássio Klebio Pereira Lins
+### Estudante do 7° ano do Curso de sistema de Informação

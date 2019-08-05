@@ -1,0 +1,5 @@
+br/com/ctis/lti/detran/app.class
+br/com/ctis/lti/detran/model/Endereco.class
+br/com/ctis/lti/detran/model/Multa.class
+br/com/ctis/lti/detran/model/Proprietario.class
+br/com/ctis/lti/detran/model/Veiculo.class

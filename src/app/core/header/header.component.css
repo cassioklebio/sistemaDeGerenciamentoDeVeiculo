@@ -1,5 +1,6 @@
-.header{
-    background-color: black;
+.header ul li{
+    background-color: rgb(238, 238, 238) !important;
+    font-size: x-small !important; 
 
 
 }

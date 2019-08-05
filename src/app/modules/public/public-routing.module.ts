@@ -6,8 +6,8 @@ import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: PublicHomeComponent, data:{breadcrumbs: 'Home'} },
-  { path: 'about', component: AboutComponent, data: {breadcrumbs: 'About'} },
+  { path: 'home', component: PublicHomeComponent, data:{title: 'Home', breadcrumb:[{label: 'Home', url: ''}]} },
+  { path: 'about', component: AboutComponent, data:{title: 'About', breadcrumb:[{label: 'About', url: ''}]} },
 
 
   { path: 'vehicle',  loadChildren: './modules/vehicle/vehicle.module#VehicleModule' },

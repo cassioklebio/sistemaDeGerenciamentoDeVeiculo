@@ -1,9 +1,12 @@
+import { Vehicle } from './../../../vehicle/models/vehicle.interface';
 import { Observable } from "rxjs";
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
 
 import { TicketService } from "../../services/ticket.service";
 import { startWith, map } from "rxjs/operators";
+import { HttpClient } from '@angular/common/http';
+import { VehicleService } from '../../../vehicle/services/vehicle.service';
 
 export interface StateGroup {
   letter: string;
@@ -21,136 +24,36 @@ export const _filter = (opt: string[], value: string): string[] => {
   styleUrls: ["./ticket-search.component.css"]
 })
 export class TicketSearchComponent implements OnInit {
+  [x: string]: any;
   searchTicket: FormGroup = this._formBuilder.group({
-    stateGroup: ""
+    ticketSearch: ""
   });
 
-  stateGroups: StateGroup[] = [
-    {
-      letter: "A",
-      names: ["Alabama", "Alaska", "Arizona", "Arkansas"]
-    },
-    {
-      letter: "C",
-      names: ["California", "Colorado", "Connecticut"]
-    },
-    {
-      letter: "D",
-      names: ["Delaware"]
-    },
-    {
-      letter: "F",
-      names: ["Florida"]
-    },
-    {
-      letter: "G",
-      names: ["Georgia"]
-    },
-    {
-      letter: "H",
-      names: ["Hawaii"]
-    },
-    {
-      letter: "I",
-      names: ["Idaho", "Illinois", "Indiana", "Iowa"]
-    },
-    {
-      letter: "K",
-      names: ["Kansas", "Kentucky"]
-    },
-    {
-      letter: "L",
-      names: ["Louisiana"]
-    },
-    {
-      letter: "M",
-      names: [
-        "Maine",
-        "Maryland",
-        "Massachusetts",
-        "Michigan",
-        "Minnesota",
-        "Mississippi",
-        "Missouri",
-        "Montana"
-      ]
-    },
-    {
-      letter: "N",
-      names: [
-        "Nebraska",
-        "Nevada",
-        "New Hampshire",
-        "New Jersey",
-        "New Mexico",
-        "New York",
-        "North Carolina",
-        "North Dakota"
-      ]
-    },
-    {
-      letter: "O",
-      names: ["Ohio", "Oklahoma", "Oregon"]
-    },
-    {
-      letter: "P",
-      names: ["Pennsylvania"]
-    },
-    {
-      letter: "R",
-      names: ["Rhode Island"]
-    },
-    {
-      letter: "S",
-      names: ["South Carolina", "South Dakota"]
-    },
-    {
-      letter: "T",
-      names: ["Tennessee", "Texas"]
-    },
-    {
-      letter: "U",
-      names: ["Utah"]
-    },
-    {
-      letter: "V",
-      names: ["Vermont", "Virginia"]
-    },
-    {
-      letter: "W",
-      names: ["Washington", "West Virginia", "Wisconsin", "Wyoming"]
-    }
-  ];
 
-  stateGroupOptions: Observable<StateGroup[]>;
+  stateGroupOptions: Observable<Vehicle>;
 
   constructor(
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private vehicleService: VehicleService,
+    private ticketService: TicketService,
+    private httclient: HttpClient
     
   ) {}
 
   ngOnInit() {
-    this.stateGroupOptions = this.searchTicket
-      .get("stateGroup")!
+    this.vehicleService.getVehicle().subscribe();
+    this.stateGroupOptions = this
+      .get(this.vehicleService.getVehicle())!
       .valueChanges.pipe(
         startWith(""),
         map(value => this._filterGroup(value))
       );
   }
-  private _filterGroup(value: string): StateGroup[] {
-    if (value) {
-      return this.stateGroups
-        .map(group => ({
-          letter: group.letter,
-          names: _filter(group.names, value)
-        }))
-        .filter(group => group.names.length > 0);
-    }
+  
 
-    return this.stateGroups;
-  }
+  submit( {placa }){
+    this.ticketService.searchTicket(placa).subscribe();
 
-  submit(){
     
   }
 }

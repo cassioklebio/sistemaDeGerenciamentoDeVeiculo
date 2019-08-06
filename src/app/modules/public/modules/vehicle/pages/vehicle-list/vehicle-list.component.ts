@@ -30,7 +30,7 @@ export class VehicleListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.vehicleService.getVehicle(   ).subscribe(vehicles => {
+    this.vehicleService.getVehicle().subscribe(vehicles => {
      this.dataSource.data = vehicles;
 
     });

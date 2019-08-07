@@ -59,12 +59,17 @@ export class TicketService {
     return `${environment.API_URL}/multa/:placa`;
   }
 
+  /**
+   * Metodo para gerar a atuação de infração 
+   */
+
   gerarPDF() {
+    const title = 'Departamento de Estradas de Rodagem';
     let documento = new jsPDF();
     documento.setFont("Courier");
     documento.setFontStyle("bold");
     documento.setFontSize(14);
-    documento.text("Departamento de Estradas de Rodagem", 50, 10);
+    documento.text(title, 50, 10);
 
     documento.setFontSize(12);
     documento.text(

@@ -1,13 +1,17 @@
 package br.com.ctis.lti.detran.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import br.com.ctis.lti.detran.model.Multa;
+import br.com.ctis.lti.detran.model.Enum.EnumTipoMulta;
 import br.com.ctis.lti.detran.repository.MultaRepository;
 
 @Service
@@ -15,6 +19,9 @@ public class MultaService {
 
 	@Autowired
 	private MultaRepository multaRepository;
+	
+	@Autowired
+	private VeiculoService veiculoService;
 
 	/**
 	 * 
@@ -22,6 +29,19 @@ public class MultaService {
 	 */
 	public List<Multa> findAll() {
 		return multaRepository.findAll();
+	}
+	
+	@Transactional
+	public void multarVeiculo (String placa, EnumTipoMulta tipo) {
+		Multa multa = new Multa();
+		multa.setData(new Date());
+		multa.setTipo(tipo.toString());
+		multa.setValor(tipo.getValor());
+		multa.setPontos(tipo.getPontos());
+		multa.setPlaca(placa);
+		veiculoService.searchVeiculoPorPlaca(placa).getMultas().add(multa);
+		
+
 	}
 
 	/*
@@ -70,13 +90,6 @@ public class MultaService {
 		}
 	}
 
-	/**
-	 * 
-	 * @param objDto
-	 * @return
-	 */
-	// public Multa fromDTO(MultaDTO objDto) {
-	// return new Multa(objDto.getId(), objDto.getPlaca(), objDto.getValor(),
-	// objDto.getData(), objDto.getTipo(), objDto.getPontos(), null, null);
-	// }
+	
+	
 }

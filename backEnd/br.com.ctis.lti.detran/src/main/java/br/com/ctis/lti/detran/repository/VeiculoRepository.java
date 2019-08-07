@@ -8,6 +8,8 @@ import br.com.ctis.lti.detran.model.Veiculo;
 @Repository
 public interface VeiculoRepository extends JpaRepository<Veiculo, Integer> {
 	
+	public Veiculo findByPlaca(String placa);
+	
 	
 	
 	

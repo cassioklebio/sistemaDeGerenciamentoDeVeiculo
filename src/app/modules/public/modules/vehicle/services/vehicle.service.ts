@@ -1,3 +1,4 @@
+import { Vehicle } from './../models/vehicle.interface';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
@@ -18,11 +19,11 @@ export class VehicleService {
   get endpoint() {
     return `${environment.API_URL}/veiculo`;
   }
+ 
 
   getVehicle(): Observable<Array<Vehicle>> {
     return this.httpService.get<any>(this.endpoint).pipe(
       map(vehicle => {
-        console.log(vehicle);
         return vehicle.map(e => {
           return {
             modelo: e.veiculoModelo,
@@ -36,18 +37,15 @@ export class VehicleService {
       })
     );
   }
-  getVehicleAutoComplete(): Observable<Array<Vehicle>> {
-    return this.httpService.get<any>(this.endpoint).pipe(
-      map(vehicle => {
-        console.log(vehicle);
-        return vehicle.map(e => {
-          return {
-            placa: e.veiculoPlaca
-          };
-        });
-      })
-    );
-  }
+  // getVehicleAutoComplete(): Observable<Array<Vehicle>> {
+  //    return this.httpService.get<any>(this.endpoint).pipe(
+  //      map(vehicle =>{
+
+  //      })
+  //    );
+    
+  // }
+  
   getVehicleById(id: number): Observable<Vehicle> {
     return this.httpService
       .get<Vehicle>(`${this.endpoint}/${id}`)

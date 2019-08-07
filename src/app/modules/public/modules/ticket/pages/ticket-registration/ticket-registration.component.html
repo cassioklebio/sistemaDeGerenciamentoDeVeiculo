@@ -9,11 +9,11 @@
              <div class="row">
                 <div class=col>
                     <mat-form-field class="full-width">
-                        <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+                        <input type="text" matInput placeholder="States Group" formControlName="board" required [matAutocomplete]="autoGroup">
                           <mat-autocomplete #autoGroup="matAutocomplete">
                             <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
-                              <mat-option *ngFor="let name of group.names" [value]="name">
-                                {{name}}
+                              <mat-option *ngFor="let board of group.names" [value]="board">
+                                {{board}}
                               </mat-option>
                           </mat-optgroup>
                         </mat-autocomplete>

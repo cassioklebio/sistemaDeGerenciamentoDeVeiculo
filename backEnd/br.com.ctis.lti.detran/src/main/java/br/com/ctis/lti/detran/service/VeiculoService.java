@@ -29,6 +29,11 @@ public class VeiculoService {
 	public List<Veiculo> findAll() {
 		return veiculoRepository.findAll();
 	}
+	
+	public Veiculo searchVeiculoPorPlaca(String placa) {
+		return veiculoRepository.findByPlaca(placa);
+		
+	}
 
 	/*
 	 * Lista um veiculo especifica

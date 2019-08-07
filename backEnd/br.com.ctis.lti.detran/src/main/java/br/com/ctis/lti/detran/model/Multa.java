@@ -24,7 +24,7 @@ public class Multa implements Serializable {
 	private double valor;
 	private Date data;
 	private String tipo;
-	private String pontos;
+	private int pontos;
 	
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id")
@@ -38,7 +38,7 @@ public class Multa implements Serializable {
 	public Multa() {
 	}
 	
-	public Multa(Integer id, String placa, double valor, Date data, String tipo, String pontos, String propietario, String veiculo) {
+	public Multa(Integer id, String placa, double valor, Date data, String tipo, int pontos, String propietario, String veiculo) {
 		super();
 		this.id = id;
 		this.placa = placa;
@@ -90,11 +90,11 @@ public class Multa implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getPontos() {
+	public int getPontos() {
 		return pontos;
 	}
 
-	public void setPontos(String pontos) {
+	public void setPontos(int pontos) {
 		this.pontos = pontos;
 	}
 
@@ -138,6 +138,8 @@ public class Multa implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	
 	
 

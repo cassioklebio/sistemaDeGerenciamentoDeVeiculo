@@ -1,8 +1,8 @@
 export interface Vehicle {
-    veiculoPlaca: string;
-    veiculoChassi: string;
-    veiculoRenavam: string;
-    veiculoModelo: string;
-    veiculoAno: number;
+  letter: any;
+  veiculoPlaca: string;
+  veiculoChassi: string;
+  veiculoRenavam: string;
+  veiculoModelo: string;
+  veiculoAno: number;
 }
-

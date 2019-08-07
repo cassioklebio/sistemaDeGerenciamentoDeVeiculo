@@ -21,7 +21,7 @@ public class MultaDTO implements Serializable {
 	@NotEmpty(message="Preenchimento obrigatório")
 	private String tipo;
 	@NotEmpty(message="Preenchimento obrigatório")
-	private String pontos;
+	private int pontos;
 	
 	
 	public MultaDTO() {
@@ -34,7 +34,7 @@ public class MultaDTO implements Serializable {
 		this.valor = obj.getValor();
 		this.data = obj.getData();
 		this.tipo = obj.getTipo();
-		this.tipo = obj.getPontos();
+		this.pontos = obj.getPontos();
 		
 	}
 
@@ -78,11 +78,11 @@ public class MultaDTO implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getPontos() {
+	public int getPontos() {
 		return pontos;
 	}
 
-	public void setPontos(String pontos) {
+	public void setPontos(int pontos) {
 		this.pontos = pontos;
 	}
 	

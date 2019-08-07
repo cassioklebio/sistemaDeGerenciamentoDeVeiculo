@@ -1,3 +1,4 @@
+import { VehicleService } from './../vehicle/services/vehicle.service';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
@@ -46,6 +47,6 @@ import { TicketService } from "./services/ticket.service";
     TicketRoutingModule,
     MatAutocompleteModule
   ],
-  providers: [TicketService]
+  providers: [TicketService, VehicleService]
 })
 export class TicketModule {}
